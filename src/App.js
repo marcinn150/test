@@ -47,8 +47,6 @@ function wypisz(user){
     }
 
     console.log(a / b);
-    console.log('a: ' + a);
-    console.log('b: ' + b);
 }
 
 /*function getMails(collections) {

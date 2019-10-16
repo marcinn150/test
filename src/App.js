@@ -1,5 +1,4 @@
-//const _ = import('lodash');
-import _ from 'lodash';
+const _ = require('lodash');
 
 const user = {
     name: 'Imie',
@@ -23,19 +22,40 @@ const user = {
     ]
 }
 
+const collections = [
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa', 'bbb', 5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+];
+
 function wypisz(user){
-    let i,x;
-    let tab = [];
     let a=0;
     let b=0;
-    for(i=0;i<user.allGrades.length;i++){
-        x.user.allGrades[i].grades;
-        tab[i] = (user.allGrades[i].grades);
-        a += _.sum(user.allGrades[i].grades)*x;
-        b += user.allGrades[i].grades.length * x;
+    for (let i = 0; i < user.allGrades.length; i++){
+        let userGrades = user.allGrades[i].grades;
+        let userGradesWeight = user.allGrades[i].weight;
+        let x = userGrades.length;
+        a += _.sum(userGrades) * userGradesWeight;
+        b += x * userGradesWeight;
     }
 
-    console.log(a/b);
+    console.log(a / b);
+    console.log('a: ' + a);
+    console.log('b: ' + b);
 }
 
+/*function getMails(collections) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(collections);
+
+}*/
+
 wypisz(user);
+//getMails(collections);

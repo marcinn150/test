@@ -50,13 +50,23 @@ function wypisz(user){
 }
 
 function getMails(collections) {
-    for (let i = 0; i < collections.length; i++) {
+
+    /*const tab = [];
+    for (let item of collections) {
         const re = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
-        const x = re.test(collections[i]);
-        console.log(x);
-    }
+        const x = re.test(item);
+        if (x == true) {
+            tab.push(item);
+        }
+    }*/
+
+    const re = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
+    const tab = collections.filter((item) => re.test(item)).sort();
+    console.log(tab);
 
 }
+
+
 
 wypisz(user);
 getMails(collections);

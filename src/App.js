@@ -49,11 +49,14 @@ function wypisz(user){
     console.log(a / b);
 }
 
-/*function getMails(collections) {
-    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(collections);
+function getMails(collections) {
+    for (let i = 0; i < collections.length; i++) {
+        const re = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
+        const x = re.test(collections[i]);
+        console.log(x);
+    }
 
-}*/
+}
 
 wypisz(user);
-//getMails(collections);
+getMails(collections);
